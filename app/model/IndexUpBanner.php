@@ -7,8 +7,8 @@
  * @link        https://www.ioa.tw/
  */
 
-class IndexBanner extends Model {
-  static $table_name = 'index_banners';
+class IndexUpBanner extends Model {
+  static $table_name = 'index_up_banners';
 
   static $has_one = array (
   );
@@ -31,7 +31,7 @@ class IndexBanner extends Model {
     parent::__construct ($attrs, $guardAttrs, $instantiatingViafind, $newRecord);
 
     // 設定圖片上傳器
-    Uploader::bind ('pic', 'IndexBannerPicImageUploader');
+    Uploader::bind ('pic', 'IndexUpBannerPicImageUploader');
   }
 
   public function destroy () {
@@ -50,7 +50,7 @@ class IndexBanner extends Model {
 }
 
 /* -- 圖片上傳器物件 ------------------------------------------------------------------ */
-class IndexBannerPicImageUploader extends ImageUploader {
+class IndexUpBannerPicImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),
