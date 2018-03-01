@@ -49,9 +49,9 @@
         <div>
           <span class='icon-14'>首頁區</span>
           <div>
-            <a href="<?php echo $url = RestfulUrl::url ('admin/starts@index');?>" class='icon-42<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>開始使用按鈕</a>
-            <a href="<?php echo $url = RestfulUrl::url ('admin/index_up_banners@index');?>" class='icon-42<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>上方廣告輪播</a>
-            <a href="" class='icon-21'>下方廣告輪播</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/starts@index');?>" class='icon-21<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>開始使用按鈕</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/index_header_banners@index');?>" class='icon-19<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>上方廣告輪播</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/index_footer_banners@index');?>" class='icon-19<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>下方廣告輪播</a>
           </div>
         </div>
         <div>

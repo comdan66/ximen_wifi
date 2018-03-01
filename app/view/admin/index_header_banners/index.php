@@ -2,7 +2,7 @@
 
 <div class='panel'>
 <?php echo $search->setTableClomuns (
-  Restful\Column::create ('啟用')->setWidth (60)->setClass ('center')->setTd (function ($obj, $column) { return $column->setSwitch ($obj->status == IndexUpBanner::STATUS_ON, array ('class' => 'switch ajax', 'data-column' => 'status', 'data-url' => RestfulUrl::url ('admin/index_up_banners@status', $obj), 'data-true' => IndexUpBanner::STATUS_ON, 'data-false' => IndexUpBanner::STATUS_OFF)); }),
+  Restful\Column::create ('啟用')->setWidth (60)->setClass ('center')->setTd (function ($obj, $column) { return $column->setSwitch ($obj->status == IndexHeaderBanner::STATUS_ON, array ('class' => 'switch ajax', 'data-column' => 'status', 'data-url' => RestfulUrl::url ('admin/index_header_banners@status', $obj), 'data-true' => IndexHeaderBanner::STATUS_ON, 'data-false' => IndexHeaderBanner::STATUS_OFF)); }),
 
   Restful\Column::create ('ID')
                 ->setWidth (50)

@@ -20,6 +20,9 @@ Router::dir ('admin', function () {
   Router::restful ('starts', 'starts', array (
     array ('model' => 'Start')));
 
-  Router::restful ('index_up_banners', 'index_up_banners', array (
-    array ('model' => 'IndexUpBanner')));
+  Router::restful ('index_header_banners', 'index_header_banners', array (
+    array ('model' => 'IndexHeaderBanner')));
+
+  Router::restful ('index_footer_banners', 'index_footer_banners', array (
+    array ('model' => 'IndexFooterBanner')));
 });

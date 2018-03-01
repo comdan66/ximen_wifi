@@ -8,7 +8,7 @@
  */
 
 return array (
-    'up' => "CREATE TABLE `index_up_banners` (
+    'up' => "CREATE TABLE `index_footer_banners` (
         `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
         `pic` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '圖片',
         `click_cnt` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '點擊次數',
@@ -21,7 +21,7 @@ return array (
         PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;",
     
-    'down' => "DROP TABLE `index_up_banners`;",
+    'down' => "DROP TABLE `index_footer_banners`;",
     
-    'at' => "2018-03-02 01:14:03",
+    'at' => "2018-03-02 01:43:03",
   );
