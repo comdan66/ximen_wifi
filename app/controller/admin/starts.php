@@ -101,8 +101,8 @@ class starts extends AdminRestfulController {
 
     return refresh (RestfulUrl::index (), 'flash', array ('type' => 'success', 'msg' => '成功！', 'params' => array ()));
   }
-
+  
   public function show ($obj) {
-    return $this->view->setPath ('starts/show.php');
+    return $this->view->setPath ('articles/show.php');
   }
 }

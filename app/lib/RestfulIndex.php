@@ -179,7 +179,7 @@ class Search {
 
             $return .= '<label class="row">';
             $return .= '<b>依據' . $condition['title'] . '搜尋</b>';
-            $return .= '<input name="' . $key . '" type="' . (isset ($condition['type']) ? $condition['type'] : 'text') . '" placeholder="依據' . $condition['title'] . '關鍵字搜尋" value="' . (empty ($condition['value']) ? '' : $condition['value']) . '" />';
+            $return .= '<input name="' . $key . '" type="' . (isset ($condition['type']) ? $condition['type'] : 'text') . '" placeholder="依據' . $condition['title'] . '搜尋" value="' . (empty ($condition['value']) ? '' : $condition['value']) . '" />';
             $return .= '</label>';
             break;
           
@@ -281,7 +281,7 @@ class Search {
     $sortKey = '';
 
     if ($this->table->isUseSort ()) {
-      $gets = Input::get ();
+      $gets = \Input::get ();
 
       if (isset ($gets[Order::KEY]))
         unset ($gets[Order::KEY]);
