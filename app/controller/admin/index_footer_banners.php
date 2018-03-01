@@ -11,7 +11,7 @@ class index_footer_banners extends AdminRestfulController {
 
   public function __construct () {
     parent::__construct ();
-    $this->layout->with ('title', '首頁上方輪播')
+    $this->layout->with ('title', '首頁下方輪播')
                  ->with ('current_url', RestfulUrl::url ('admin/index_footer_banners@index'));
   }
 

@@ -25,4 +25,7 @@ Router::dir ('admin', function () {
 
   Router::restful ('index_footer_banners', 'index_footer_banners', array (
     array ('model' => 'IndexFooterBanner')));
+
+  Router::restful ('store_tags', 'store_tags', array (
+    array ('model' => 'StoreTag')));
 });
