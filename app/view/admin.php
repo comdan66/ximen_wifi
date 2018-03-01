@@ -16,8 +16,7 @@
     <main id='main'>
       <header id='main-header'>
         <a id='hamburger' class='icon-01'></a>
-        <nav><b>文章系統</b></nav>
-        <!-- <nav><b>文章系統</b><span>文章列表</span></nav> -->
+        <nav><b><?php echo isset ($title) && $title ? $title : '';?></b></nav>
         <a href='<?php echo URL::base ('logout');?>' class='icon-02'></a>
       </header>
 
@@ -37,7 +36,7 @@
 
       <div id='menu-user'>
         <figure class='_ic'>
-          <img src="https://cdn.pixabay.com/photo/2017/07/09/11/29/sun-flower-2486721_1280.jpg">
+          <img src="">
         </figure>
 
         <div>
@@ -48,22 +47,28 @@
 
       <div id='menu-main'>
         <div>
-          <span class='icon-14' data-cnt='<?php echo $acnt = Article::count (Where::create ('status = ?', Article::STATUS_OFF));?>' data-cntlabel='article'>管理區</span>
+          <span class='icon-14'>首頁區</span>
           <div>
-            <a href="" class='icon-21'>後台首頁</a>
-            <a href="<?php echo $url = RestfulUrl::url ('admin/tags@index');?>" class='icon-42<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>標籤</a>
-            <a data-cnt='<?php echo $acnt;?>' data-cntlabel='article' href="<?php echo $url = RestfulUrl::url ('admin/articles@index');?>" class='icon-22<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>文章</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/starts@index');?>" class='icon-42<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>開始使用按鈕</a>
+            <a href="" class='icon-21'>西門特搜輪播</a>
+            <a href="" class='icon-21'>下方廣告輪播</a>
+          </div>
+        </div>
+        <div>
+          <span class='icon-14'>商家管理</span>
+          <div>
+            <a href="" class='icon-21'>商家分類</a>
+            <a href="" class='icon-21'>商家列表</a>
+          </div>
+        </div>
+        <div>
+          <span class='icon-14'>美食情報</span>
+          <div>
+            <a href="" class='icon-21'>原生廣告</a>
+            <a href="" class='icon-21'>品牌輪播</a>
           </div>
         </div>
 
-        <div>
-          <span class='icon-14'>管理區</span>
-          <div>
-            <a href="" class='icon-21'>後台首頁</a>
-            <a href="" class='icon-20'>Banner 上稿</a>
-            <a href="" class='icon-22'>文章 上稿</a>
-          </div>
-        </div>
       </div>
     </div>
 

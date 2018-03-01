@@ -9,7 +9,9 @@
 
 class main extends Controller {
   public function index () {
-
+    // echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
+    // var_dump (password_hash ('12345', PASSWORD_DEFAULT));
+    // exit ();
   }
   
   public function logout () {
@@ -36,7 +38,7 @@ class main extends Controller {
       Validation::need ($posts, 'account', '帳號')->isStringOrNumber ()->doTrim ()->length (1, 255);
       Validation::need ($posts, 'password', '密碼')->isStringOrNumber ()->doTrim ()->length (1, 255);
 
-      if (!$user = User::find ('one', array ('select' => 'id, account, password, token, logined_at, logined_cnt', 'where' => array ('account = ?', $posts['account']))))
+      if (!$user = User::find ('one', array ('select' => 'id, account, password, token', 'where' => array ('account = ?', $posts['account']))))
         Validation::error ('此帳號不存在！');
       
       if (!password_verify ($posts['password'], $user->password))
@@ -44,8 +46,6 @@ class main extends Controller {
     };
 
     $transaction = function ($user) {
-      $user->logined_at = date ('Y-m-d H:i:s');
-      $user->logined_cnt = $user->logined_cnt + 1;
       $user->token || $user->token = md5 (($user->id ? $user->id . '_' : '') . uniqid (rand () . '_'));
       return $user->save ();
     };

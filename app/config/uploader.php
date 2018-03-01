@@ -22,7 +22,7 @@ return array (
   'drivers' => array (
       'local' => array (
           'base_dir' => array ('upload'),
-          'base_url' => 'http://dev.oaci.ioa.tw/',
+          'base_url' => 'http://dev.ximen.occupy/',
           'd4_url' => '',
         ),
       's3' => array (

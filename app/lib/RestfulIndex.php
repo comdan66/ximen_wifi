@@ -132,8 +132,7 @@ class Search {
     if ($value === null || $value === '' || (is_array ($value) && !count ($value)) || empty ($this->searches[$key]['sql']))
       return $this;
     
-    is_callable ($this->searches[$key]['sql']) && $this->searches[$key]['sql'] = $this->searches[$key]['sql']($value);
-    
+    is_callable ($this->searches[$key]['sql']) && $this->where->and ($this->searches[$key]['sql']($value));
     is_string ($this->searches[$key]['sql']) && $this->where->and ($this->searches[$key]['sql'], strpos (strtolower ($this->searches[$key]['sql']), ' like ') !== false ? '%' . $value . '%' : $value);
     is_object ($this->searches[$key]['sql']) && $this->searches[$key]['sql'] instanceof Where && $this->where->and ($this->searches[$key]['sql']);
 

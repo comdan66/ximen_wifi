@@ -7,18 +7,16 @@
  * @link        https://www.ioa.tw/
  */
 
+Router::get ('', 'main@index');
+
 Router::get ('login', 'main@login');
 Router::get ('logout', 'main@logout');
-
-Router::get ('fb_signin', 'main@fb_signin');
 Router::post ('login', 'main@ac_signin');
+
 
 Router::dir ('admin', function () {
   Router::get ('', 'main');
 
-  Router::restful ('tags', 'tags', array (
-    array ('model' => 'Tag')));
-  
-  Router::restful ('articles', 'articles', array (
-    array ('model' => 'Article')));
+  Router::restful ('starts', 'starts', array (
+    array ('model' => 'Start')));
 });
