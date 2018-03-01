@@ -13,10 +13,7 @@ return array (
         `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '名稱',
         `account` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '帳號',
         `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '密碼',
-        
         `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT 'Access Token',
-        
-        `fid` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT 'Facebook UID',
         
         `logined_cnt` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '登入次數',
         `logined_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '登入時間',

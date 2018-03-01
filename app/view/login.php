@@ -18,16 +18,11 @@
     
     <main id='main'>
       <h1>
-        <!-- <div class='img'><img src="http://dev.alley.store.friday.tw/assets/images/alleylogo.png"></div> -->
         <span>登入後台系統</span>
       </h1>
 
       <form class='login' action='<?php echo URL::base ('login');?>' method='post'>
-        <div class='tabs'>
-          <a<?php echo $from !== 'oauth' ? ' class="active"' : '';?>>帳密</a>
-          <a<?php echo $from === 'oauth' ? ' class="active"' : '';?>>社群</a>
-        </div>
-
+      
         <div>
           <div class='acc-psw'>
             <span<?php echo $flash['type'] ? ' class="' . $flash['type'] . '"' : '';?>><?php echo $flash['msg'];?></span>
@@ -43,16 +38,7 @@
 
             <button type='submit'>登入</button>
           </div>
-          <div class='oauth'>
-            <span<?php echo $flash['type'] ? ' class="' . $flash['type'] . '"' : '';?>><?php echo $flash['msg'];?></span>
-
-            <a href="<?php echo Facebook::loginUrl ('fb_signin');?>" class='icon-facebook facebook'>使用 Facebook 登入</a>
-            <a href="" class='icon-google google'>使用 Google 登入</a>
-            <!-- <a href="" class='icon-github github'>使用 Github 登入</a>
-            <a href="" class='icon-line line'>使用 LINE 登入</a> -->
-          </div>
         </div>
-
 
       </form>
       <span>© 2014 - <?php echo date ('Y');?> www.ioa.tw | 後台版型設計 by <a href='https://www.ioa.tw/' target='_blank'>OAWU</a></span>
