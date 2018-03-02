@@ -36,7 +36,7 @@
 
       <div id='menu-user'>
         <figure class='_ic'>
-          <img src="">
+          <img src="/assets/img/user.png">
         </figure>
 
         <div>
