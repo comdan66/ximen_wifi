@@ -28,4 +28,7 @@ Router::dir ('admin', function () {
 
   Router::restful ('store_tags', 'store_tags', array (
     array ('model' => 'StoreTag')));
+
+  Router::restful ('stores', 'stores', array (
+    array ('model' => 'Store')));
 });

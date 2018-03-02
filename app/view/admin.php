@@ -58,7 +58,7 @@
           <span class='icon-14'>商家管理</span>
           <div>
             <a href="<?php echo $url = RestfulUrl::url ('admin/store_tags@index');?>" class='icon-42<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>商家分類</a>
-            <a href="" class='icon-21'>商家列表</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/stores@index');?>" class='icon-21<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>商家列表</a>
           </div>
         </div>
         <div>
