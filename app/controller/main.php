@@ -8,10 +8,14 @@
  */
 
 class main extends Controller {
+  public function intro () {
+    return View::create ('intro.php');
+  }
   public function index () {
     // echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
     // var_dump (password_hash ('12345', PASSWORD_DEFAULT));
     // exit ();
+    return View::create ('index.php');
   }
   
   public function logout () {

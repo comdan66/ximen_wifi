@@ -8,6 +8,7 @@
  */
 
 Router::get ('', 'main@index');
+Router::get ('intro', 'main@intro');
 
 Router::get ('login', 'main@login');
 Router::get ('logout', 'main@logout');
