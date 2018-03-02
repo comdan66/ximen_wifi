@@ -31,4 +31,10 @@ Router::dir ('admin', function () {
 
   Router::restful ('stores', 'stores', array (
     array ('model' => 'Store')));
+
+  Router::restful ('ori_ads', 'ori_ads', array (
+    array ('model' => 'OriAd')));
+
+  Router::restful ('brands', 'brands', array (
+    array ('model' => 'Brand')));
 });

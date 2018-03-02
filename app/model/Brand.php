@@ -7,14 +7,13 @@
  * @link        https://www.ioa.tw/
  */
 
-class Store extends Model {
-  static $table_name = 'stores';
+class Brand extends Model {
+  static $table_name = 'brands';
 
   static $has_one = array (
   );
 
   static $has_many = array (
-    array ('images',  'class_name' => 'StoreImage'),
   );
 
   static $belongs_to = array (
@@ -24,8 +23,7 @@ class Store extends Model {
     parent::__construct ($attrs, $guardAttrs, $instantiatingViafind, $newRecord);
 
     // 設定圖片上傳器
-    Uploader::bind ('icon', 'StoreIconImageUploader');
-    Uploader::bind ('bg', 'StoreBgImageUploader');
+    Uploader::bind ('pic', 'BrandPicImageUploader');
   }
 
   public function destroy () {
@@ -41,25 +39,10 @@ class Store extends Model {
         return false;
     return true;
   }
-  public function min_column ($column, $length = 100) {
-    if (!isset ($this->$column))
-      return '';
-
-    return $length ? mb_strimwidth (remove_ckedit_tag ($this->$column), 0, $length, '…','UTF-8') : remove_ckedit_tag ($this->$column);
-  }
 }
 
 /* -- 圖片上傳器物件 ------------------------------------------------------------------ */
-class StoreIconImageUploader extends ImageUploader {
-  public function getVersions () {
-    return array (
-        '' => array (),
-        'w100' => array ('resize', 100, 100, 'width'),
-        'c1200x630' => array ('adaptiveResizeQuadrant', 1200, 630, 't'),
-      );
-  }
-}
-class StoreBgImageUploader extends ImageUploader {
+class BrandPicImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),

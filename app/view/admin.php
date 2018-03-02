@@ -64,8 +64,8 @@
         <div>
           <span class='icon-14'>美食情報</span>
           <div>
-            <a href="" class='icon-21'>原生廣告</a>
-            <a href="" class='icon-21'>品牌輪播</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/ori_ads@index');?>" class='icon-21<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>原生廣告</a>
+            <a href="<?php echo $url = RestfulUrl::url ('admin/brands@index');?>" class='icon-21<?php echo isset ($current_url) && $url === $current_url ? ' active' : '';?>'>品牌輪播</a>
           </div>
         </div>
 

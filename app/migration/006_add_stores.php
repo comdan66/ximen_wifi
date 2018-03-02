@@ -20,6 +20,7 @@ return array (
         `money` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '荷包情況',
         `menu` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '推薦菜單',
         `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '商家描述',
+        `click_cnt` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '點擊次數',
         `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
         `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
         PRIMARY KEY (`id`)
