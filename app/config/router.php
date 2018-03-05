@@ -38,4 +38,21 @@ Router::dir ('admin', function () {
 
   Router::restful ('brands', 'brands', array (
     array ('model' => 'Brand')));
+
+
+
+  Router::restful (array ('index_header_banner', 'pvs'), 'pv_index_header_banners', array (
+    array ('model' => 'IndexHeaderBanner'), array ('model' => 'PvIndexHeaderBanner')));
+
+  Router::restful (array ('index_footer_banner', 'pvs'), 'pv_index_footer_banners', array (
+    array ('model' => 'IndexFooterBanner'), array ('model' => 'PvIndexFooterBanner')));
+
+  Router::restful (array ('store', 'pvs'), 'pv_stores', array (
+    array ('model' => 'Store'), array ('model' => 'PvStore')));
+
+  Router::restful (array ('ori_ad', 'pvs'), 'pv_ori_ads', array (
+    array ('model' => 'OriAd'), array ('model' => 'PvOriAd')));
+
+  Router::restful (array ('brand', 'pvs'), 'pv_brands', array (
+    array ('model' => 'Brand'), array ('model' => 'PvBrand')));
 });

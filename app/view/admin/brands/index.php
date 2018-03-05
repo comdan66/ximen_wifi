@@ -9,7 +9,8 @@
   Restful\Column::create ('點擊次數')->setWidth (100)->setSort ('click_cnt')->setTd (function ($obj) { return number_format ($obj->click_cnt); }),
   Restful\EditColumn::create ('編輯')->setTd (function ($obj, $column) {
     return $column->addDeleteLink (RestfulUrl::destroy ($obj))
-                  ->addEditLink (RestfulUrl::edit ($obj)); }));
+                  ->addEditLink (RestfulUrl::edit ($obj))
+                  ->addLink (RestfulUrl::url ('admin/pv_brands@index', $obj), array ('class' =>'icon-29')); }));
 ?>
 </div>
 
