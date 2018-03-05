@@ -323,23 +323,26 @@ class Images extends Row {
     if ($this->name === null)
       return $return;
 
-    $value = $this->obj && ($columnName = $this->columnName) && $this->obj->{$this->many} ? array_filter (array_map (function ($t) use ($columnName) { return $t->$columnName instanceof \Uploader ? $t->$columnName->url () : null; }, $this->obj->{$this->many})) : array ();
+    $value = $this->obj && ($columnName = $this->columnName) && $this->obj->{$this->many} ? array_merge (array_filter (array_map (function ($t) use ($columnName) { return $t->$columnName instanceof \Uploader ? array ($t->id, $t->$columnName->url ()) : null; }, $this->obj->{$this->many})), array (array ('', ''))) : array (array ('', ''));
 
+    $attrs2 = array ('type="hidden"', 'name="_ori_' . $this->name . '[]' . '"');
     $attrs = array ('type="file"', 'name="' . $this->name . '[]' . '"');
     $this->accept && array_push ($attrs, 'accept="' . $this->accept . '"');
 
     $return .= '<div class="row">';
       $return .= $this->b ();
       $return .= '<div class="multi-drop-imgs">';
-      $return .= implode ('', array_map (function ($value) use ($attrs) {
+      $return .= implode ('', array_map (function ($value) use ($attrs, $attrs2) {
+        array_push ($attrs2, 'value="' . $value[0] . '"');
 
         $return = '<div class="drop-img">';
-          $return .= '<img src="' . $value . '" />';
+          $value[0] && $value[1] && $return .= '<input' . self::attrs ($attrs2) .'/>';
+          $return .= '<img src="' . $value[1] . '" />';
           $return .= '<input' . self::attrs ($attrs) .'/>';
           $return .= '<a class="icon-04"></a>';
         $return .= '</div>';
         return $return;
-      }, array_unique ($value ? $value : array (''))));
+      }, $value));
       $return .= '</div>';
     $return .= '</div>';
 
