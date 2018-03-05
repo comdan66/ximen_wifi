@@ -16,7 +16,7 @@ class pv_index_header_banners extends AdminRestfulController {
   }
 
   public function index () {
-    $where = Where::create ('index_header_banners_id = ?', $this->parent->id);
+    $where = Where::create ('index_header_banner_id = ?', $this->parent->id);
 
     $search = Restful\Search::create ($where)
                             ->input ('開始日期', function ($val) { return Where::create ('DATE(created_at) >= ?', $val); }, 'date')

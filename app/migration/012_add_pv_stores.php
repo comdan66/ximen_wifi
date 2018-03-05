@@ -10,7 +10,7 @@
 return array (
     'up' => "CREATE TABLE `pv_stores` (
         `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-        `stores_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'Store ID',
+        `store_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'Store ID',
         `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
         PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;",

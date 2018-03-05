@@ -16,7 +16,7 @@ class pv_ori_ads extends AdminRestfulController {
   }
 
   public function index () {
-    $where = Where::create ('ori_ads_id = ?', $this->parent->id);
+    $where = Where::create ('ori_ad_id = ?', $this->parent->id);
 
     $search = Restful\Search::create ($where)
                             ->input ('開始日期', function ($val) { return Where::create ('DATE(created_at) >= ?', $val); }, 'date')

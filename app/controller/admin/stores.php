@@ -48,7 +48,8 @@ class stores extends AdminRestfulController {
   public function create () {
     $validation = function (&$posts, &$files) {
       Validation::maybe ($posts, 'status', '狀態', Store::STATUS_OFF)->isStringOrNumber ()->doTrim ()->doRemoveHtmlTags ()->inArray (array_keys (Store::$statusTexts));
-      
+      Validation::need ($posts, 'store_tag_id', '商家分類')->isNumber ()->doTrim ()->greater (0)->doRemoveHtmlTags ()->inArray (StoreTag::getArray ('id'));
+
       Validation::need ($files, 'icon', '圖示')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024);
       Validation::maybe ($files, 'bg', '封面')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024);
 
@@ -100,7 +101,8 @@ class stores extends AdminRestfulController {
   public function update ($obj) {
     $validation = function (&$posts, &$files, &$obj) {
       Validation::maybe ($posts, 'status', '狀態', Store::STATUS_OFF)->isStringOrNumber ()->doTrim ()->doRemoveHtmlTags ()->inArray (array_keys (Store::$statusTexts));
-      
+      Validation::need ($posts, 'store_tag_id', '商家分類')->isNumber ()->doTrim ()->greater (0)->doRemoveHtmlTags ()->inArray (StoreTag::getArray ('id'));
+
       $obj->icon->getValue ()
         ? Validation::maybe ($files, 'icon', '圖示')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024)
         : Validation::need ($files, 'icon', '圖示')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024);

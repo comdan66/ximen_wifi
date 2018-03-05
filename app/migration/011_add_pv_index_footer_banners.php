@@ -10,7 +10,7 @@
 return array (
     'up' => "CREATE TABLE `pv_index_footer_banners` (
         `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-        `index_footer_banners_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'Index Footer Banner ID',
+        `index_footer_banner_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'Index Footer Banner ID',
         `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',
         PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;",

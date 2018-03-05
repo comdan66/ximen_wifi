@@ -16,7 +16,7 @@ class pv_brands extends AdminRestfulController {
   }
 
   public function index () {
-    $where = Where::create ('brands_id = ?', $this->parent->id);
+    $where = Where::create ('brand_id = ?', $this->parent->id);
 
     $search = Restful\Search::create ($where)
                             ->input ('開始日期', function ($val) { return Where::create ('DATE(created_at) >= ?', $val); }, 'date')

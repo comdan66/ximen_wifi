@@ -4,6 +4,7 @@
 
 <?php echo $form->appendFormRows (
   Restful\Switcher::need ('是否啟用', 'status')->setCheckedValue (Store::STATUS_ON),
+  Restful\Selecter::need ('商家分類', 'store_tag_id')->setItemObjs (StoreTag::find ('all', array ('select' => 'id, name')), 'id', 'name'),
   Restful\Image::need ('圖示', 'icon')->setTip ('請上傳 100x100 圖片')->setAccept ('image/*'),
   Restful\Image::maybe ('封面', 'bg')->setTip ('請上傳 640x320 圖片')->setAccept ('image/*'),
   Restful\Text::need ('名稱', 'name')->setAutofocus (true)->setMaxLength (255),
