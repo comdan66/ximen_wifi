@@ -108,8 +108,8 @@ class Output {
     self::$cacheExpiration > 0 && self::writeCache ($output);
     self::$compressOutput === true && isset ($_SERVER['HTTP_ACCEPT_ENCODING']) && strpos ($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== false && ob_start ('ob_gzhandler');
 
-    // foreach (self::getHeaders () as $header)
-    //   @header ($header[0], $header[1]);
+    foreach (self::getHeaders () as $header)
+      @header ($header[0], $header[1]);
 
     echo $output;
   }

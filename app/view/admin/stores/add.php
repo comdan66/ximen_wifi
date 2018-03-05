@@ -3,6 +3,7 @@
 </div>
 
 <?php echo $form->appendFormRows (
+  Restful\Switcher::need ('是否啟用', 'status')->setCheckedValue (Store::STATUS_ON),
   Restful\Image::need ('圖示', 'icon')->setTip ('預覽僅示意，未按比例')->setAccept ('image/*'),
   Restful\Image::maybe ('封面', 'bg')->setTip ('預覽僅示意，未按比例')->setAccept ('image/*'),
   Restful\Text::need ('名稱', 'name')->setAutofocus (true)->setMaxLength (255),

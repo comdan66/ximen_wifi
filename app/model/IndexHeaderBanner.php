@@ -54,6 +54,7 @@ class IndexHeaderBannerPicImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),
+        'wh10_9' => array ('adaptiveResizeQuadrant', 400, 360, 'c'),
       );
   }
 }

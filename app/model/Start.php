@@ -46,6 +46,7 @@ class StartPicImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),
+        'wh710_400' => array ('adaptiveResizeQuadrant', 710, 400, 'c'),
       );
   }
 }

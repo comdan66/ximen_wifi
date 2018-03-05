@@ -8,14 +8,52 @@
  */
 
 class main extends Controller {
-  public function intro () {
-    return View::create ('intro.php');
+
+  public function stores () {
+    $q = Input::get ('q');
+    $asset = Asset::create (2)
+                  ->addCSS ('/assets/css/site.css')
+                  ->addCSS ('/assets/css/icon-site.css')
+                  ->addCSS ('/assets/css/stores.css')
+                  ->addJS ('/assets/js/res/jquery-1.10.2.min.js')
+                  ->addJS ('/assets/js/res/imgLiquid-min.js')
+                  ->addJS ('/assets/js/stores.js');
+
+    return View::create ('stores.php')
+               ->with ('asset', $asset)
+               ->with ('q', $q);
   }
+
+  public function intro () {
+    $asset = Asset::create (2)
+             ->addCSS ('/assets/css/site.css')
+             ->addCSS ('/assets/css/intro.css')
+             ->addJS ('/assets/js/res/jquery-1.10.2.min.js')
+             ->addJS ('/assets/js/intro.js');
+
+    $hBanners = IndexHeaderBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexHeaderBanner::STATUS_ON)));
+    $fBanners = IndexFooterBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexFooterBanner::STATUS_ON)));
+
+    return View::create ('intro.php')
+               ->with ('asset', $asset)
+               ->with ('hBanners', $hBanners)
+               ->with ('fBanners', $fBanners);
+  }
+
   public function index () {
-    // echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
-    // var_dump (password_hash ('12345', PASSWORD_DEFAULT));
-    // exit ();
-    return View::create ('index.php');
+    $asset = Asset::create (2)
+             ->addCSS ('/assets/css/intro.css')
+             ->addJS ('/assets/js/res/jquery-1.10.2.min.js');
+
+    $hBanners = IndexHeaderBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexHeaderBanner::STATUS_ON)));
+    $start = Start::find ('one', array ('order' => 'id DESC', 'where' => array ()));
+    $fBanners = IndexFooterBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexFooterBanner::STATUS_ON)));
+
+    return View::create ('index.php')
+               ->with ('asset', $asset)
+               ->with ('hBanners', $hBanners)
+               ->with ('start', $start)
+               ->with ('fBanners', $fBanners);
   }
   
   public function logout () {

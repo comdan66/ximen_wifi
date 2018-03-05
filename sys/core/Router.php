@@ -85,7 +85,7 @@ class Router {
 
   public static function __callStatic ($name, $arguments) {
     in_array ($name == strtolower ($name), array ('get', 'post', 'put', 'delete', 'cli')) || gg ('Router 沒有此「' . $name . '」Method！');
-    return self::method ($name, array (array_shift ($arguments)), array_shift ($arguments));
+    return self::method ($name, array (array_shift ($arguments)), array_shift ($arguments), array_shift ($arguments));
   }
 
   private static function parseRouters () {

@@ -20,6 +20,14 @@ class Store extends Model {
   static $belongs_to = array (
   );
 
+  const STATUS_ON  = 'on';
+  const STATUS_OFF = 'off';
+
+  static $statusTexts = array (
+    self::STATUS_ON  => '啟用',
+    self::STATUS_OFF => '停用',
+  );
+
   public function __construct ($attrs = array (), $guardAttrs = true, $instantiatingViafind = false, $newRecord = true) {
     parent::__construct ($attrs, $guardAttrs, $instantiatingViafind, $newRecord);
 
@@ -60,6 +68,9 @@ class StoreIconImageUploader extends ImageUploader {
   }
 }
 class StoreBgImageUploader extends ImageUploader {
+  public function d4Url () {
+    return '/assets/img/dtl-top-bg.jpg';
+  }
   public function getVersions () {
     return array (
         '' => array (),

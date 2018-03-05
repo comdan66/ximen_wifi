@@ -3,5 +3,5 @@
 </div>
 
 <?php echo $form->appendFormRows (
-  Restful\Image::need ('圖片', 'pic')->setTip ('預覽僅示意，未按比例')->setAccept ('image/*')
+  Restful\Image::need ('圖片', 'pic')->setTip ('請上傳 710x400 圖片')->setAccept ('image/*')
 );?>

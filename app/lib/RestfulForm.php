@@ -522,8 +522,8 @@ class Switcher extends Row {
     $value = get_flash_params ($this->name, '_oa_null_');
     $value = $value === '_oa_null_' ? $this->getValue ($this->name, $this->value) : $value;
 
-    $return .= '<div class="row">';
-      $return .= $this->b ();
+    $return .= '<div class="row min">';
+      $return .= $this->b () . ' ';
       $return .= '<div class="switches">';
       $return .= form_switch ($this->name, $this->checkedValue, '', $value === $this->checkedValue);
       $return .= '</div>';

@@ -9,12 +9,16 @@
 
 Router::get ('', 'main@index');
 Router::get ('intro', 'main@intro');
+Router::get ('stores', 'main@stores');
 
 Router::get ('login', 'main@login');
 Router::get ('logout', 'main@logout');
 Router::post ('login', 'main@ac_signin');
 
 
+Router::dir ('api', function () {
+  Router::get ('stores/(:id)', 'stores@index($1)', array (array ('model' => 'Store')));
+});
 Router::dir ('admin', function () {
   Router::get ('', 'main');
 
@@ -39,8 +43,6 @@ Router::dir ('admin', function () {
   Router::restful ('brands', 'brands', array (
     array ('model' => 'Brand')));
 
-
-
   Router::restful (array ('index_header_banner', 'pvs'), 'pv_index_header_banners', array (
     array ('model' => 'IndexHeaderBanner'), array ('model' => 'PvIndexHeaderBanner')));
 
@@ -56,3 +58,6 @@ Router::dir ('admin', function () {
   Router::restful (array ('brand', 'pvs'), 'pv_brands', array (
     array ('model' => 'Brand'), array ('model' => 'PvBrand')));
 });
+// echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
+// var_dump (Router::$routers);
+// exit ();

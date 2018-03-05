@@ -80,6 +80,8 @@ class index_header_banners extends AdminRestfulController {
 
   public function update ($obj) {
     $validation = function (&$posts, &$files, &$obj) {
+      Validation::maybe ($posts, 'status', '狀態', IndexHeaderBanner::STATUS_OFF)->isStringOrNumber ()->doTrim ()->doRemoveHtmlTags ()->inArray (array_keys (IndexHeaderBanner::$statusTexts));
+      
       $obj->pic->getValue ()
         ? Validation::maybe ($files, 'pic', '圖片')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024)
         : Validation::need ($files, 'pic', '圖片')->isUploadFile ()->formats ('jpg', 'gif', 'png')->size (1, 10 * 1024 * 1024);
