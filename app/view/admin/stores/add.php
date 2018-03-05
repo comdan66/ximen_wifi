@@ -4,8 +4,8 @@
 
 <?php echo $form->appendFormRows (
   Restful\Switcher::need ('是否啟用', 'status')->setCheckedValue (Store::STATUS_ON),
-  Restful\Image::need ('圖示', 'icon')->setTip ('預覽僅示意，未按比例')->setAccept ('image/*'),
-  Restful\Image::maybe ('封面', 'bg')->setTip ('預覽僅示意，未按比例')->setAccept ('image/*'),
+  Restful\Image::need ('圖示', 'icon')->setTip ('請上傳 100x100 圖片')->setAccept ('image/*'),
+  Restful\Image::maybe ('封面', 'bg')->setTip ('請上傳 640x320 圖片')->setAccept ('image/*'),
   Restful\Text::need ('名稱', 'name')->setAutofocus (true)->setMaxLength (255),
   Restful\Text::need ('營業時間', 'open_time')->setMaxLength (255),
   Restful\Text::need ('電話', 'phone')->setMaxLength (255),

@@ -13,19 +13,37 @@
   </head>
   <body lang="zh-tw">
     <main id='main'>
-      <div id='top'<?php echo $q ? ' class="s"' : '';?>>
-        <h1><a href="">Ximen Free Wifi 西門智慧商圈</a></h1>
+      <div id='top' class="<?php echo $f && $t ? 'f t' : ($f ? 'f' : ($t ? 't' : ''));?>">
+        <h1><a href="<?php echo Url::base('intro');?>">Ximen Free Wifi 西門智慧商圈</a></h1>
         <a class='icon-2' id='sf'></a>
-        <a class='icon-1'></a>
+        <a class='icon-1' id='st'></a>
         
         <form id='fm' action='<?php echo Url::base ('stores');?>'>
-          <input type='text' name='q' value='<?php echo $q;?>' />
+          <input type='text' name='f' value='<?php echo $f;?>' />
           <button class='icon-2'> 搜尋</button>
         </form>
+
+        <div id='tags'>
+          <a href='<?php echo Url::base ('stores/?t=' . 'aa');?>' class='cho'>sada</a>
+          <a href=''>sadafds</a>
+          <a href=''>ss</a>
+          <a href=''>sada</a>
+          <a href=''>sadafds</a>
+          <a href=''>ss</a>
+          <a href=''>sada</a>
+          <a href=''>sadafds</a>
+          <a href=''>ss</a>
+          <a href=''>sada</a>
+          <a href=''>sadafds</a>
+          <a href=''>ss</a>
+          <a href=''>sada</a>
+          <a href=''>sadafds</a>
+          <a href=''>ss</a>
+        </div>
       </div>
 
       <div id='list'>
-        <div class='store' data-link='https://www.google.com.tw/'>
+        <div class='box' data-link='https://www.google.com.tw/'>
           <div class='logo'>
             <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/1-61-150x150.jpg' />
           </div>
@@ -36,7 +54,7 @@
           </div>
         </div>
 
-        <div class='store' data-box='<?php echo Url::base ('api/stores/3');?>'>
+        <div class='box' data-box='<?php echo Url::base ('api/stores/3');?>'>
           <div class='logo'>
             <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/1-61-150x150.jpg' />
           </div>
@@ -75,12 +93,6 @@
         </div>
       </div>
     </main>
-
-    <div id='box'></div>
-    <div class='_c'></div>
-    
-    <div id='img'></div>
-    <div class='_c'></div>
 
   </body>
 </html>

@@ -14,8 +14,8 @@
   <body lang="zh-tw">
     <div id='top' data-i='1'>
 <?php foreach ($hBanners as $banner) { ?>
-        <a class='img' href='<?php echo $banner->link;?>'>
-          <img src="<?php echo $banner->pic->url ('wh10_9');?>">
+        <a class='box' data-box='<?php echo Url::base ('api/stores/3');?>'>
+          <img src="<?php echo $banner->pic->url ('min');?>">
         </a>
 <?php }?>
     </div>
@@ -26,8 +26,8 @@
     </div>
     <div id='bot' data-i='1'>
 <?php foreach ($fBanners as $banner) { ?>
-        <a class='img' href='<?php echo $banner->link;?>'>
-          <img src="<?php echo $banner->pic->url ('wh10_6');?>">
+        <a class='box' data-link='<?php echo Url::base ('api/stores/3');?>'>
+          <img src="<?php echo $banner->pic->url ('min');?>">
         </a>
 <?php }?>
     </div>

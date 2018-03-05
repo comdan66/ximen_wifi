@@ -19,7 +19,7 @@ class stores extends Controller {
 
     return Output::json (array (
         'id' => $store->id,
-        'icon' => $store->icon->url (),
+        'icon' => $store->icon->url ('w100'),
         'bg' => $store->bg->url (),
         'name' => $store->name,
         'open_time' => $store->open_time,
@@ -32,7 +32,7 @@ class stores extends Controller {
         'imgs' => array_map (function ($image) {
           return array (
               'ori' => $image->pic->url (),
-              'min' => $image->pic->url ()
+              'min' => $image->pic->url ('w100')
             );
         }, $store->images)
       ));

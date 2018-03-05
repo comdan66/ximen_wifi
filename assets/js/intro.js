@@ -6,6 +6,14 @@
  */
  
 $(function () {
+  $('#start-img, #mid > a').each (function () {
+    $(this).imgLiquid ({ verticalAlign: 'center' });
+  });
+
+  // $('#top .box, #bot .box').each (function () {
+  //   $(this).imgLiquid ({ fill: true });
+  // });
+
   $('#top, #bot').each (function () {
     var $that = $(this);
     $that.data ('l', $that.find ('>.img').length);

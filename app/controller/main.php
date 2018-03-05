@@ -10,26 +10,32 @@
 class main extends Controller {
 
   public function stores () {
-    $q = Input::get ('q');
+    $f = Input::get ('f');
+    $t = Input::get ('t');
     $asset = Asset::create (2)
-                  ->addCSS ('/assets/css/site.css')
                   ->addCSS ('/assets/css/icon-site.css')
+                  ->addCSS ('/assets/css/site.css')
                   ->addCSS ('/assets/css/stores.css')
                   ->addJS ('/assets/js/res/jquery-1.10.2.min.js')
                   ->addJS ('/assets/js/res/imgLiquid-min.js')
+                  ->addJS ('/assets/js/site.js')
                   ->addJS ('/assets/js/stores.js');
 
     return View::create ('stores.php')
                ->with ('asset', $asset)
-               ->with ('q', $q);
+               ->with ('f', $f)
+               ->with ('t', $t);
   }
 
   public function intro () {
     $asset = Asset::create (2)
+             ->addCSS ('/assets/css/icon-site.css')
              ->addCSS ('/assets/css/site.css')
              ->addCSS ('/assets/css/intro.css')
              ->addJS ('/assets/js/res/jquery-1.10.2.min.js')
-             ->addJS ('/assets/js/intro.js');
+             ->addJS ('/assets/js/res/imgLiquid-min.js')
+             ->addJS ('/assets/js/intro.js')
+             ->addJS ('/assets/js/site.js');
 
     $hBanners = IndexHeaderBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexHeaderBanner::STATUS_ON)));
     $fBanners = IndexFooterBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexFooterBanner::STATUS_ON)));
@@ -43,7 +49,10 @@ class main extends Controller {
   public function index () {
     $asset = Asset::create (2)
              ->addCSS ('/assets/css/intro.css')
-             ->addJS ('/assets/js/res/jquery-1.10.2.min.js');
+             ->addJS ('/assets/js/res/jquery-1.10.2.min.js')
+             ->addJS ('/assets/js/res/imgLiquid-min.js')
+             ->addJS ('/assets/js/intro.js')
+             ;
 
     $hBanners = IndexHeaderBanner::find ('all', array ('order' => 'sort DESC', 'where' => array ('status = ?', IndexHeaderBanner::STATUS_ON)));
     $start = Start::find ('one', array ('order' => 'id DESC', 'where' => array ()));

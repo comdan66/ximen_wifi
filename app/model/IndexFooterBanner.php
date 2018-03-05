@@ -54,7 +54,7 @@ class IndexFooterBannerPicImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),
-        'wh10_6' => array ('adaptiveResizeQuadrant', 400, 240, 'c'),
+        'min' => array ('adaptiveResizeQuadrant', 400, 240, 'c'),
       );
   }
 }

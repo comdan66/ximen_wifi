@@ -63,7 +63,6 @@ class StoreIconImageUploader extends ImageUploader {
     return array (
         '' => array (),
         'w100' => array ('resize', 100, 100, 'width'),
-        'c1200x630' => array ('adaptiveResizeQuadrant', 1200, 630, 't'),
       );
   }
 }
@@ -74,8 +73,6 @@ class StoreBgImageUploader extends ImageUploader {
   public function getVersions () {
     return array (
         '' => array (),
-        'w100' => array ('resize', 100, 100, 'width'),
-        'c1200x630' => array ('adaptiveResizeQuadrant', 1200, 630, 't'),
       );
   }
 }

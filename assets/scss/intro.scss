@@ -18,7 +18,7 @@ $maxWidth: 450px;
   @include range-width($maxWidth) {
     left: calc(50% - #{($maxWidth / 2)});
   }
-  > .img {
+  > .box {
     position: absolute;
     left: 0;
     top: 0;
@@ -35,7 +35,7 @@ $maxWidth: 450px;
   @for $i from 1 through $cnt {
     &[data-i='#{$i}'] {
       @for $j from 1 through $cnt {
-        > .img:nth-child(#{$j}) {
+        > .box:nth-child(#{$j}) {
           left: #{($j - $i) * 100%};
         }
       }
@@ -44,22 +44,30 @@ $maxWidth: 450px;
 }
 #top {
   top: 0;
-  height: 90vw;
+  height: 50vh;
+
   @include range-width($maxWidth) {
     height: calc(#{($maxWidth * .9)});
   };
 }
 #mid {
-  top: 90vw;
-  height: 30vw;
+  top: 50vh;
+  height: 20vh;
+
   @include range-width($maxWidth) {
     top: calc(#{($maxWidth * .9)});
     height: calc(#{($maxWidth * .3)});;
   };
+  > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
 }
 #bot {
-  top: 120vw;
-  height: 60vw;
+  top: 70vh;
+  height: 30vh;
+
   @include range-width($maxWidth) {
     top: calc(#{($maxWidth * 1.2)});
     height: calc(#{($maxWidth * .6)});;
@@ -75,18 +83,26 @@ $maxWidth: 450px;
   max-width: $maxWidth;
   z-index: 1;
   background-color: rgba(255, 255, 255, .50);
+
   ~ * {
     position: fixed;
+    &:not(#start) {
+      @include filter(blur(2px));
+    }
   }
 }
 #start {
   position: fixed;
   bottom: 0;
+  display: inline-block;
+  width: 100%;
   height: 56vw;
   z-index: 1;
 
   #start-img {
+    display: inline-block;
     width: 100%;
+    height: 100%;
     position: absolute;
     bottom: 0;
     left: 0;

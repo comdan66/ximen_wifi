@@ -67,21 +67,40 @@ $maxWidth: 640px;
     font-size: 20px;
   }
 
-  &.s {
+  &.f {
     > form {
       height: 38px;
       padding-bottom: 8px;
       @include opacity(1);
     }
-    + * {
-      margin-top: 40px + 38px;
-      height: calc(100% - 100px - 40px - 38px);
-      @include range-width(0, 450px) {
-        height: calc(100% - 60px - 40px - 38px);
-      };
-      @include range-width(450px, 550px) {
-        height: calc(100% - 70px - 40px - 38px);
-      };
+  }
+  &.t {
+    #tags {
+      display: block;
+    }
+  }
+  #tags {
+    display: none;
+    height: auto;
+    width: 100%;
+    padding: 4px;
+    margin-top: 2px;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    @include clearfix();
+    
+    > * {
+      float: left;
+      display: inline-block;
+      margin: 4px;
+      height: 20px;
+      line-height: 20px;
+      text-decoration: none;
+      @include opacity(.75);
+
+      &.cho {
+        font-weight: bold;
+        @include opacity(1);
+      }
     }
   }
   > form {
@@ -93,6 +112,7 @@ $maxWidth: 640px;
     padding-top: 0;
     padding-bottom: 0;
     text-align: left;
+    overflow: hidden;
     @include transition(opacity .3s, height .3s, padding-bottom .3s);
     
     @include clearfix();
@@ -137,8 +157,6 @@ $maxWidth: 640px;
   overflow-y: scroll;
   z-index: 4;
   padding-bottom: 20px;
-  @include transition(margin-top .3s, height .3s);
-  
 
   > div {
     position: relative;

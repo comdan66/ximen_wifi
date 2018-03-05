@@ -5,7 +5,7 @@
   Restful\Column::create ('啟用')->setWidth (60)->setClass ('center')->setTd (function ($obj, $column) { return $column->setSwitch ($obj->status == Store::STATUS_ON, array ('class' => 'switch ajax', 'data-column' => 'status', 'data-url' => RestfulUrl::url ('admin/stores@status', $obj), 'data-true' => Store::STATUS_ON, 'data-false' => Store::STATUS_OFF)); }),
 
   Restful\Column::create ('ID')->setWidth (50)->setSort ('id')->setTd (function ($obj) { return $obj->id; }),
-  Restful\Column::create ('圖示')->setWidth (50)->setClass ('oaips')->setTd (function ($obj) { return $obj->icon->toImageTag (); }),
+  Restful\Column::create ('圖示')->setWidth (50)->setClass ('oaips')->setTd (function ($obj) { return $obj->icon->toImageTag ('w100'); }),
   Restful\Column::create ('封面')->setWidth (50)->setClass ('oaips')->setTd (function ($obj) { return $obj->bg->toImageTag (); }),
   Restful\Column::create ('其他')->setWidth (50)->setClass ('oaips')->setTd (function ($obj) { return implode ('', array_map (function ($img) { return $img->pic->toImageTag (); }, $obj->images)); }),
   Restful\Column::create ('名稱')->setWidth (100)->setTd (function ($obj) { return $obj->name; }),
