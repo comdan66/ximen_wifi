@@ -612,7 +612,7 @@ $maxWidth: 640px;
     height: calc(100% - 70px - 40px);
   }
   padding: 8px;
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 4;
   padding-bottom: 20px;
 

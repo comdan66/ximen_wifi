@@ -19,7 +19,7 @@
         <a class='icon-1' id='st'></a>
         
         <form id='fm' action='<?php echo Url::base ('stores');?>'>
-          <input type='text' name='f' value='<?php echo $f;?>' />
+          <input type='text' name='f' value='<?php echo $f;?>' minlength='0' required/>
           <button class='icon-2'> 搜尋</button>
         </form>
 

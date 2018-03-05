@@ -30,7 +30,7 @@
 
     <div id='menu'>
       <header id='menu-header'>
-        <a href='<?php echo URL::base ();?>' class='icon-15'></a>
+        <a href='<?php echo URL::base ();?>' class='icon-21'></a>
         <span>後台管理系統</span>
       </header>
 
