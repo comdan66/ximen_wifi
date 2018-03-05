@@ -13,7 +13,7 @@
   </head>
   <body lang="zh-tw">
     <main id='main'>
-      <div id='top' class="<?php echo $f && $t ? 'f t' : ($f ? 'f' : ($t ? 't' : ''));?>">
+      <div id='header' class="<?php echo $f && $t ? 'f t' : ($f ? 'f' : ($t ? 't' : ''));?>">
         <h1><a href="<?php echo Url::base('intro');?>">Ximen Free Wifi 西門智慧商圈</a></h1>
         <a class='icon-2' id='sf'></a>
         <a class='icon-1' id='st'></a>
@@ -73,13 +73,13 @@
         
         <div class='banner'>
           <a class='ad'>
-            <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/200.jpg'>
+            <img src='http://ximen-free-wifi.com/wfp_res/5129cad621d3434dbbd7457d08f91d7a.png'>
           </a>
           <a class='ad'>
             <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/300.jpg'>
           </a>
           <a class='ad'>
-            <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/200.jpg'>
+            <img src='http://ximen-free-wifi.com/wfp_api/api/cs/adv/ADV17102014530000/link'>
           </a>
           <a class='ad'>
             <img src='http://occupy.sungchin.com/ximen/wp-content/uploads/2018/02/200.jpg'>
